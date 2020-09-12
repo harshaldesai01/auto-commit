@@ -12,7 +12,8 @@ do
     else
 	echo "Pushing changes..."
         git add .
-        git commit -m "commiting changes at `date + '%Y-%m-%d %H: %M: %S'`"
+	now=$(date)
+        git commit -m "commiting changes at $now"
         git pull https://github.com/harshaldesai01/auto-commit
         git push https://github.com/harshaldesai01/auto-commit
         echo "Changes pushed!"
