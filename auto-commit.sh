@@ -1,10 +1,12 @@
+#!/bin/sh
+
 for file in *
-do 
-    sum1 = "$(md5dum "$file")"
+do
+    sum1="$(md5sum "$file")"
     sleep 60
-    sum2 = "$(md5sum "$file")"
-	
-    if [ "$sum1" = "$sum2" ];
+    sum2="$(md5sum "$file")"
+
+    if [ "$sum1" = "$sum2" ]
     then
         echo "No changes!"
     else
@@ -15,3 +17,4 @@ do
         git push https://github.com/harshaldesai01/auto-commit
         echo "Changes pushed!"
     fi
+done
